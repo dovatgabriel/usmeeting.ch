@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   return (
     <div className="flex flex-col gap-5 items-center justify-center h-screen w-screen p-20">
@@ -7,6 +9,7 @@ export default function Home() {
       <h2 className="text-md md:text-xl lg:text-3xl font-medium text-center">
         Notre site web est actuellement en construction.
       </h2>
+      <Button>Coucou</Button>
     </div>
   );
 }
