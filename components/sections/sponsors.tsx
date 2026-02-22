@@ -14,53 +14,25 @@ import oron from "@/app/images/sponsors/oron.png";
 const companies = [
   {
     name: "BCV",
-    logo: (
-      <Image
-        src={bcv}
-        alt="Logo BCV"
-        className="w-50 mx-20 mix-blend-difference"
-      />
-    ),
+    logo: <Image src={bcv} alt="Logo BCV" className="w-50 mx-20" />,
   },
   {
     name: "HessJ Sàrl",
-    logo: (
-      <Image
-        src={hessj}
-        alt="Logo HessJ Sàrl"
-        className="w-50 mx-20 mix-blend-difference"
-      />
-    ),
+    logo: <Image src={hessj} alt="Logo HessJ Sàrl" className="w-50 mx-20" />,
   },
   {
     name: "La Mobilière",
     logo: (
-      <Image
-        src={mobiliere}
-        alt="Logo La Mobilière"
-        className="w-50 mx-20 mix-blend-difference"
-      />
+      <Image src={mobiliere} alt="Logo La Mobilière" className="w-50 mx-20" />
     ),
   },
   {
     name: "Commune d'Oron",
-    logo: (
-      <Image
-        src={oron}
-        alt="Logo Commune d'Oron"
-        className="w-50 mx-20 mix-blend-difference"
-      />
-    ),
+    logo: <Image src={oron} alt="Logo Commune d'Oron" className="w-50 mx-20" />,
   },
   {
     name: "Cardinal",
-    logo: (
-      <Image
-        src={cardinal}
-        alt="Logo Cardinal"
-        className="w-50 mx-20 mix-blend-difference"
-      />
-    ),
+    logo: <Image src={cardinal} alt="Logo Cardinal" className="w-50 mx-20" />,
   },
 ];
 
