@@ -7,7 +7,7 @@ export const Hero = () => {
   const { dark } = useIcon();
 
   return (
-    <div className="relative flex flex-col gap-10 items-center justify-center h-[90dvh] px-10 md:px-30 overflow-hidden">
+    <div className="relative flex flex-col gap-10 items-center justify-center h-[80dvh] px-10 md:px-30 overflow-hidden">
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
@@ -19,7 +19,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex flex-col gap-10 items-center text-center">
         <Image src={dark} alt="US Meeting Icon" className="size-60" />
-        <div className="flex flex-col gap-5 items-center">
+        <div className="flex flex-col gap-5 items-center font-pacifico">
           <h1 className="font-extrabold text-3xl md:text-6xl text-white">
             U.S. Meeting Oron
           </h1>

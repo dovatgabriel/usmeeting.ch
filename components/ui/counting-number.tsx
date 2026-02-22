@@ -61,8 +61,10 @@ function CountingNumber({
   React.useEffect(() => {
     if (isInView) {
       motionVal.set(number);
+    } else {
+      motionVal.set(fromNumber);
     }
-  }, [isInView, number, motionVal]);
+  }, [isInView, number, motionVal, fromNumber]);
 
   React.useEffect(() => {
     const unsubscribe = springVal.on("change", (latest) => {
