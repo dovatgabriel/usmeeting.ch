@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Pacifico, Raleway } from "next/font/google";
-import { ThemeToggle } from "@/components/theme-toggle";
 import "./globals.css";
 
 const raleway = Raleway({
@@ -35,7 +34,6 @@ export default function RootLayout({
         />
       </head>
       <body className={`${raleway.variable} ${pacifico.variable} antialiased`}>
-        <ThemeToggle />
         {children}
       </body>
     </html>
