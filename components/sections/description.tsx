@@ -2,7 +2,7 @@ import ScrollReveal from "../ui/scroll-reveal";
 
 export const Description = () => {
   return (
-    <div className="mx-10 lg:mx-40 lg:px-20 lg:py-30 py-20">
+    <div className="mx-10 lg:mx-40 lg:px-20 lg:py-30 py-20 transition-colors duration-300">
       <ScrollReveal
         baseOpacity={0.1}
         enableBlur

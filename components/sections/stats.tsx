@@ -40,11 +40,11 @@ const Stat = ({
     <div className="flex items-center gap-1">
       <CountingNumber
         number={value}
-        className="text-5xl md:text-8xl font-semibold bg-linear-to-r from-purple-900 to-orange-500 bg-clip-text text-transparent"
+        className="text-5xl md:text-8xl font-semibold bg-linear-to-r from-purple-900 to-orange-500 dark:from-purple-400 dark:to-orange-400 bg-clip-text text-transparent transition-colors duration-300"
         inView
         inViewOnce={false}
       />
-      <span className="text-3xl md:text-6xl font-medium text-orange-500">
+      <span className="text-3xl md:text-6xl font-medium text-orange-500 dark:text-orange-400 transition-colors duration-300">
         {suffix || "+"}
       </span>
     </div>
