@@ -11,8 +11,7 @@ const subscribe = (callback: () => void) => {
   return () => observer.disconnect();
 };
 
-const getSnapshot = () =>
-  document.documentElement.classList.contains("dark");
+const getSnapshot = () => document.documentElement.classList.contains("dark");
 
 const getServerSnapshot = () => false;
 

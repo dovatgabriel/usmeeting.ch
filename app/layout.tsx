@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { Pacifico, Raleway } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/ui/navbar";
+import { Footer } from "@/components/ui/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const pacifico = Pacifico({
+  variable: "--font-pacifico",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -34,10 +36,11 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${raleway.variable} ${pacifico.variable} antialiased overflow-x-hidden`}
       >
-        <ThemeToggle />
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

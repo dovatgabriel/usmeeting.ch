@@ -1,10 +1,35 @@
 "use client";
 
+import { HERO_VIDEO_URL } from "@/app/constants";
 import { useIcon } from "@/hooks/use-icon";
 import Image from "next/image";
 
 export const Hero = () => {
-  const icon = useIcon();
+  const { dark } = useIcon();
 
-  return <Image src={icon} alt="US Meeting" height={100} width={100} />;
+  return (
+    <div className="relative flex flex-col gap-10 items-center justify-center h-[80dvh] px-10 md:px-30 overflow-hidden">
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        src={HERO_VIDEO_URL}
+      />
+      <div className="absolute inset-0 bg-black/60 dark:bg-black/75 transition-colors duration-300" />
+      <div className="relative z-10 flex flex-col gap-10 items-center text-center">
+        <Image src={dark} alt="US Meeting Icon" className="size-60" />
+        <div className="flex flex-col gap-5 items-center font-pacifico">
+          <h1 className="font-extrabold text-3xl md:text-6xl text-white">
+            U.S. Meeting Oron
+          </h1>
+          <p className="text-xl md:text-2xl text-white/70">
+            La plus grande célébration de la culture automobile américaine en
+            Suisse
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 };

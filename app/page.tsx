@@ -1,9 +1,21 @@
+import { Benevoles } from "@/components/sections/benevoles";
+import { Contact } from "@/components/sections/contact";
+import { Description } from "@/components/sections/description";
+import { Faq } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
+import { Sponsors } from "@/components/sections/sponsors";
+import { Stats } from "@/components/sections/stats";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-stretch">
+    <div className="flex flex-col items-stretch overflow-x-hidden">
       <Hero />
+      <Description />
+      <Stats />
+      <Sponsors />
+      <Benevoles />
+      <Faq />
+      <Contact />
     </div>
   );
 }
