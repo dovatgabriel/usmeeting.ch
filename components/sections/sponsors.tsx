@@ -44,7 +44,10 @@ export const Sponsors = () => {
   const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
-    <div className="pt-40 pb-20 bg-accent/50 flex flex-col items-center gap-3 [--marquee-bg:hsl(var(--accent)/0.5)] overflow-x-hidden transition-colors duration-300">
+    <div
+      className="pt-40 pb-20 bg-accent/50 flex flex-col items-center gap-3 [--marquee-bg:hsl(var(--accent)/0.5)] overflow-x-hidden transition-colors duration-300"
+      id="sponsors"
+    >
       <div className="flex flex-col gap-5 items-center">
         <span className="text-lg lg:text-xl font-medium text-muted-foreground">
           Sponsors principaux

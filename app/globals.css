@@ -183,6 +183,9 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply scroll-smooth;
+  }
   body {
     @apply bg-background text-foreground transition-colors duration-300;
     font-family: var(--font-raleway), sans-serif;

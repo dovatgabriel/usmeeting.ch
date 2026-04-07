@@ -1,4 +1,5 @@
 import { Description } from "@/components/sections/description";
+import { Faq } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
 import { Sponsors } from "@/components/sections/sponsors";
 import { Stats } from "@/components/sections/stats";
@@ -10,6 +11,7 @@ export default function Home() {
       <Description />
       <Stats />
       <Sponsors />
+      <Faq />
     </div>
   );
 }
