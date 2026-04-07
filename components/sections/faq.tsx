@@ -96,7 +96,10 @@ export const Faq = () => {
   const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
-    <section id="faq" className="py-32 px-8 flex flex-col items-center">
+    <section
+      id="faq"
+      className="py-32 px-8 flex flex-col items-center bg-accent/50 transition-colors duration-300"
+    >
       <div className="w-full max-w-3xl flex flex-col gap-16">
         <div className="flex flex-col gap-5 items-center">
           <span className="text-lg lg:text-xl font-medium text-muted-foreground">
@@ -141,7 +144,7 @@ export const Faq = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col divide-y rounded-xl border px-6">
+        <div className="flex flex-col divide-y rounded-xl border px-6 bg-background transition-all">
           {FAQS.map((faq, i) => (
             <FaqItem
               key={faq.question}

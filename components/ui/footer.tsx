@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const USEFUL_LINKS = [
   { label: "Questions fréquentes", href: "#faq" },
-  { label: "À propos de l'évènement", href: "/about" },
+  { label: "Bénévoles", href: "#benevoles" },
   { label: "Devenir sponsor", href: "#sponsors" },
 ];
 

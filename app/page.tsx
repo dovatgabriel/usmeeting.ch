@@ -1,3 +1,4 @@
+import { Benevoles } from "@/components/sections/benevoles";
 import { Description } from "@/components/sections/description";
 import { Faq } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
@@ -11,6 +12,7 @@ export default function Home() {
       <Description />
       <Stats />
       <Sponsors />
+      <Benevoles />
       <Faq />
     </div>
   );
