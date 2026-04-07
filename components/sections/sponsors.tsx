@@ -10,6 +10,9 @@ import cardinal from "@/app/images/sponsors/cardinal.png";
 import hessj from "@/app/images/sponsors/hessj.png";
 import mobiliere from "@/app/images/sponsors/mobiliere.webp";
 import oron from "@/app/images/sponsors/oron.png";
+import { ExternalLink } from "lucide-react";
+import { Button } from "../ui/button";
+import { SPONSORS_FOLDER_URL } from "@/app/constants";
 
 const companies = [
   {
@@ -41,15 +44,18 @@ export const Sponsors = () => {
   const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
-    <div className="py-40 bg-accent/50 flex flex-col items-center gap-3 [--marquee-bg:hsl(var(--accent)/0.5)]">
+    <div className="pt-40 pb-20 bg-accent/50 flex flex-col items-center gap-3 [--marquee-bg:hsl(var(--accent)/0.5)] overflow-x-hidden">
       <div className="flex flex-col gap-5 items-center">
-        <span className="text-xl font-medium text-muted-foreground">
+        <span className="text-lg lg:text-xl font-medium text-muted-foreground">
           Sponsors principaux
         </span>
-        <h2 className="text-5xl font-bold relative inline-block" ref={ref}>
+        <h2
+          className="text-2xl lg:text-5xl font-bold relative inline-block"
+          ref={ref}
+        >
           Ils nous soutiennent
           <svg
-            className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-1/2 h-4 overflow-visible"
+            className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-1/2 h-4"
             viewBox="0 0 100 10"
             preserveAspectRatio="none"
           >
@@ -108,6 +114,14 @@ export const Sponsors = () => {
           }}
         />
       </Marquee>
+      <Button
+        variant="link"
+        className="mt-30 mb-10 text-lg"
+        size="lg"
+        onClick={() => window.open(SPONSORS_FOLDER_URL)}
+      >
+        Devenir sponsor <ExternalLink size={30} />
+      </Button>
     </div>
   );
 };

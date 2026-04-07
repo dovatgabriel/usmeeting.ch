@@ -1,5 +1,6 @@
 "use client";
 
+import { HERO_VIDEO_URL } from "@/app/constants";
 import { useIcon } from "@/hooks/use-icon";
 import Image from "next/image";
 
@@ -14,7 +15,7 @@ export const Hero = () => {
         loop
         muted
         playsInline
-        src="https://firebasestorage.googleapis.com/v0/b/us-meeting-deck.firebasestorage.app/o/videos%2Fhero.mp4?alt=media&token=34ec14f2-dab9-4f02-9e73-52770a8286fd"
+        src={HERO_VIDEO_URL}
       />
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex flex-col gap-10 items-center text-center">

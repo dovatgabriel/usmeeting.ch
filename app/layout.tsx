@@ -33,7 +33,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${raleway.variable} ${pacifico.variable} antialiased`}>
+      <body
+        className={`${raleway.variable} ${pacifico.variable} antialiased overflow-x-hidden`}
+      >
         {children}
       </body>
     </html>

@@ -1,8 +1,12 @@
+"use client";
+
+import { ArrowRight } from "lucide-react";
+import { Button } from "../ui/button";
 import CountingNumber from "../ui/counting-number";
 
 export const Stats = () => {
   return (
-    <div className="flex flex-col items-center gap-10 flex-wrap px-5 mx-0 lg:px-10 lg:mx-40 lg:pb-50">
+    <div className="flex flex-col items-center gap-10 flex-wrap px-5 mx-0 lg:px-10 lg:mx-40">
       <h1 className="text-2xl text-muted-foreground text-center">
         En quelques chiffres...
       </h1>
@@ -11,6 +15,14 @@ export const Stats = () => {
         <Stat label="Véhicules américains" value={250} />
         <Stat label="D’exposition & animations" value={1500} suffix="m²" />
       </div>
+      <Button
+        variant="link"
+        className="my-30 text-lg"
+        size="lg"
+        onClick={() => (window.location.href = "about")}
+      >
+        En savoir plus sur l&apos;évènement <ArrowRight size={30} />
+      </Button>
     </div>
   );
 };
