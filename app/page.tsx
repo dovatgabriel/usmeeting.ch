@@ -1,4 +1,5 @@
 import { Benevoles } from "@/components/sections/benevoles";
+import { Contact } from "@/components/sections/contact";
 import { Description } from "@/components/sections/description";
 import { Faq } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
@@ -14,6 +15,7 @@ export default function Home() {
       <Sponsors />
       <Benevoles />
       <Faq />
+      <Contact />
     </div>
   );
 }
