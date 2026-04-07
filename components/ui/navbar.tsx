@@ -4,16 +4,18 @@ import { useIcon } from "@/hooks/use-icon";
 import { useTheme } from "@/hooks/use-theme";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const LINKS = [
-  { label: "Accueil", href: "#" },
-  { label: "À propos", href: "#description" },
-  { label: "Bénévoles", href: "#benevoles" },
-  { label: "Sponsors", href: "#sponsors" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Accueil", href: "/" },
+  { label: "À Propos", href: "/#description" },
+  { label: "Sponsors", href: "/#sponsors" },
+  { label: "Bénévoles", href: "/#benevoles" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 function ThemeButton() {
@@ -38,6 +40,8 @@ function ThemeButton() {
 
 export const Navbar = () => {
   const { dynamic } = useIcon();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -47,9 +51,10 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Ferme le menu si on redimensionne vers desktop
   useEffect(() => {
-    const onResize = () => { if (window.innerWidth >= 768) setOpen(false); };
+    const onResize = () => {
+      if (window.innerWidth >= 768) setOpen(false);
+    };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
@@ -57,23 +62,19 @@ export const Navbar = () => {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled || open
+        scrolled || open || !isHome
           ? "bg-background/80 backdrop-blur-md border-b shadow-sm translate-y-0 opacity-100"
           : "-translate-y-full opacity-0 pointer-events-none"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
-
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 shrink-0">
+        <Link href="/#" className="flex items-center gap-2.5 shrink-0">
           <Image src={dynamic} alt="US Meeting Oron" className="size-8" />
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-bold">US Meeting</span>
             <span className="text-xs text-muted-foreground">Oron-La-Ville</span>
           </div>
-        </a>
-
-        {/* Links — desktop */}
+        </Link>
         <nav className="hidden md:flex items-center gap-1">
           {LINKS.map((link) => (
             <a
@@ -85,8 +86,6 @@ export const Navbar = () => {
             </a>
           ))}
         </nav>
-
-        {/* Right — theme + burger */}
         <div className="flex items-center gap-1">
           <ThemeButton />
           <button
@@ -98,8 +97,6 @@ export const Navbar = () => {
           </button>
         </div>
       </div>
-
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.nav

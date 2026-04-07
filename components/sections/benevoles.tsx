@@ -160,7 +160,7 @@ export const Benevoles = () => {
             <Button
               size="lg"
               className="w-full text-base font-bold"
-              onClick={() => (window.location.href = BENEVOLE_FORM_URL)}
+              onClick={() => window.open(BENEVOLE_FORM_URL)}
             >
               Je suis volontaire
               <HandFist />

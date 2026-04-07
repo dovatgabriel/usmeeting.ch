@@ -5,9 +5,10 @@ import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 
 const USEFUL_LINKS = [
-  { label: "Questions fréquentes", href: "#faq" },
-  { label: "Bénévoles", href: "#benevoles" },
-  { label: "Devenir sponsor", href: "#sponsors" },
+  { label: "Notre histoire", href: "/story" },
+  { label: "Questions fréquentes", href: "/#faq" },
+  { label: "Bénévoles", href: "/#benevoles" },
+  { label: "Devenir sponsor", href: "/#sponsors" },
 ];
 
 export const Footer = () => {
