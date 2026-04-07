@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Pacifico, Raleway } from "next/font/google";
 import "./globals.css";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 
 const raleway = Raleway({
@@ -38,7 +38,7 @@ export default function RootLayout({
       <body
         className={`${raleway.variable} ${pacifico.variable} antialiased overflow-x-hidden`}
       >
-        <ThemeToggle />
+        <Navbar />
         {children}
         <Footer />
       </body>

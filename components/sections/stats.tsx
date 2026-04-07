@@ -19,7 +19,7 @@ export const Stats = () => {
         variant="link"
         className="my-30 text-lg"
         size="lg"
-        onClick={() => (window.location.href = "about")}
+        onClick={() => (window.location.href = "story")}
       >
         En savoir plus sur l&apos;évènement <ArrowRight size={30} />
       </Button>

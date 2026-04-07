@@ -6,32 +6,32 @@ import { Plus } from "lucide-react";
 
 const FAQS = [
   {
-    question: "Quand a lieu l'US Meeting Oron ?",
+    question: "Quand a lieu l'US Meeting Oron?",
     answer:
       "L'US Meeting Oron se déroule chaque année le premier week-end du mois de septembre à Oron-La-Ville. Restez connectés sur nos réseaux pour connaître la date exacte de la prochaine édition.",
   },
   {
-    question: "Comment participer avec mon véhicule américain ?",
+    question: "Comment participer avec mon véhicule américain?",
     answer:
       "Tous les propriétaires de véhicules américains sont les bienvenus. Il suffit de venir le jour de la manifestation avec votre véhicule et nous vous accueillerons !",
   },
   {
-    question: "L'événement est-il ouvert au public ?",
+    question: "L'événement est-il ouvert au public?",
     answer:
       "Oui, l'US Meeting Oron est ouvert à tous les passionnés d'automobiles américaines et au grand public. L'entrée est libre pour les visiteurs.",
   },
   {
-    question: "Y a-t-il de la restauration sur place ?",
+    question: "Y a-t-il de la restauration sur place?",
     answer:
       "Oui, plusieurs stands de restauration et buvettes sont présents sur le site tout au long de l'événement pour vous accueillir dans la bonne humeur.",
   },
   {
-    question: "Comment devenir sponsor ?",
+    question: "Comment devenir sponsor?",
     answer:
       "Nous sommes toujours à la recherche de partenaires locaux et nationaux. Consultez notre dossier de sponsoring ou contactez-nous directement à contact@usmeeting.ch pour plus d'informations.",
   },
   {
-    question: "Où se garer pour l'événement ?",
+    question: "Où se garer pour l'événement?",
     answer:
       "Des parkings dédiés sont mis à disposition à proximité du site. Des indications seront communiquées avant l'événement sur nos canaux officiels.",
   },
