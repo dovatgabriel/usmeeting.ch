@@ -66,3 +66,16 @@ export async function getYearPhotos(year: string): Promise<GalleryPhoto[]> {
     .filter((i) => isImage(i.name))
     .map((i) => ({ url: getDownloadUrl(i.name, i.downloadTokens), name: i.name }));
 }
+
+export type GallerySection = { year: string; photos: GalleryPhoto[] };
+
+export async function getAllGalleryPhotos(): Promise<GallerySection[]> {
+  const years = await getGalleryYears();
+  const sections = await Promise.all(
+    years.map(async (y) => ({
+      year: y.year,
+      photos: await getYearPhotos(y.year),
+    }))
+  );
+  return sections.filter((s) => s.photos.length > 0);
+}

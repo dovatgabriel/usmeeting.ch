@@ -5,14 +5,23 @@ import { Lightbox } from "./lightbox";
 import type { GalleryPhoto } from "@/lib/gallery";
 import { motion } from "motion/react";
 
-export function PhotoGrid({ photos }: { photos: GalleryPhoto[] }) {
+export function PhotoGrid({
+  photos,
+  year,
+}: {
+  photos: GalleryPhoto[];
+  year?: string;
+}) {
   const [selected, setSelected] = useState<number | null>(null);
 
   const onClose = useCallback(() => setSelected(null), []);
-  const onPrev = useCallback(() => setSelected((i) => (i !== null && i > 0 ? i - 1 : i)), []);
+  const onPrev = useCallback(
+    () => setSelected((i) => (i !== null && i > 0 ? i - 1 : i)),
+    [],
+  );
   const onNext = useCallback(
     () => setSelected((i) => (i !== null && i < photos.length - 1 ? i + 1 : i)),
-    [photos.length]
+    [photos.length],
   );
 
   return (
@@ -30,7 +39,11 @@ export function PhotoGrid({ photos }: { photos: GalleryPhoto[] }) {
           >
             <img
               src={photo.url}
-              alt=""
+              alt={
+                year
+                  ? `Photo de l'édition ${year} du US Meeting Oron`
+                  : "Photo US Meeting Oron"
+              }
               loading="lazy"
               className="w-full object-cover group-hover:scale-105 transition-transform duration-300"
             />

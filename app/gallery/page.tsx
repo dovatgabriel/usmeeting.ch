@@ -1,8 +1,8 @@
-import { getGalleryYears } from "@/lib/gallery";
+import { getAllGalleryPhotos } from "@/lib/gallery";
+import { PhotoGrid } from "@/components/gallery/photo-grid";
+import { GalleryHeading } from "@/components/gallery/gallery-heading";
 import { Images } from "lucide-react";
-import Link from "next/link";
 import { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Galerie photos",
@@ -19,52 +19,60 @@ export const metadata: Metadata = {
 };
 
 export default async function GalleryPage() {
-  const years = await getGalleryYears();
+  const sections = await getAllGalleryPhotos();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    name: "Galerie photos — US Meeting Oron",
+    description:
+      "Photos des éditions du US Meeting Oron à Oron-La-Ville, Suisse.",
+    url: "https://usmeeting.ch/gallery",
+    image: sections.flatMap((s) =>
+      s.photos.slice(0, 10).map((p) => ({
+        "@type": "ImageObject",
+        contentUrl: p.url,
+        name: `Photo de l'édition ${s.year} du US Meeting Oron`,
+        description: `Rassemblement de véhicules américains à Oron-La-Ville, édition ${s.year}`,
+      }))
+    ),
+  };
 
   return (
-    <main className="min-h-screen pt-24 pb-32 px-8 flex flex-col items-center">
-      <div className="w-full max-w-5xl flex flex-col gap-16">
-        <div className="flex flex-col items-center gap-3 text-center">
-          <span className="text-lg font-medium text-muted-foreground">
-            Les souvenirs en images
-          </span>
-          <h1 className="text-4xl lg:text-6xl font-bold">Galerie photos</h1>
-        </div>
-        {years.length === 0 ? (
-          <div className="flex flex-col items-center gap-4 py-20 text-muted-foreground">
-            <Images className="size-12 opacity-30" />
-            <p>Aucune photo disponible pour le moment.</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {years.map((y) => (
-              <Link
-                key={y.year}
-                href={`/gallery/${y.year}`}
-                className="group relative overflow-hidden rounded-2xl border bg-accent/50 aspect-video flex items-end transition-colors duration-300 hover:border-foreground/20"
-              >
-                {y.preview && (
-                  <Image
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    alt={`Galerie ${y.year}`}
-                    src={y.preview}
-                    fill
-                  />
-                )}
-                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="relative p-5 flex items-end justify-between w-full">
-                  <span className="text-4xl font-bold text-white">
-                    {y.year}
-                  </span>
-                  <span className="text-sm text-white/70">
-                    {y.count} photos
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="min-h-screen pt-24 pb-32 px-8 flex flex-col items-center">
+        <div className="w-full max-w-7xl flex flex-col gap-20">
+          <GalleryHeading />
+
+          {sections.length === 0 ? (
+            <div className="flex flex-col items-center gap-4 py-20 text-muted-foreground">
+              <Images className="size-12 opacity-30" />
+              <p>Aucune photo disponible pour le moment.</p>
+            </div>
+          ) : (
+            sections.map((section) => (
+              <section key={section.year} id={`edition-${section.year}`} className="flex flex-col gap-8">
+                <div className="flex items-end justify-between gap-4 flex-wrap border-b pb-4">
+                  <h2 className="text-3xl lg:text-4xl font-bold">
+                    Édition{" "}
+                    <span className="bg-linear-to-r from-purple-500 to-orange-500 bg-clip-text text-transparent">
+                      {section.year}
+                    </span>
+                  </h2>
+                  <span className="text-muted-foreground text-sm">
+                    {section.photos.length} photos
                   </span>
                 </div>
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
-    </main>
+                <PhotoGrid photos={section.photos} year={section.year} />
+              </section>
+            ))
+          )}
+        </div>
+      </main>
+    </>
   );
 }

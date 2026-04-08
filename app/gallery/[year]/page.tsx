@@ -62,7 +62,7 @@ export default async function YearGalleryPage({ params }: Props) {
             <p>Aucune photo disponible pour cette édition.</p>
           </div>
         ) : (
-          <PhotoGrid photos={photos} />
+          <PhotoGrid photos={photos} year={year} />
         )}
       </div>
     </main>
