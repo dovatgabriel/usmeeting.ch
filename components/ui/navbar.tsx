@@ -12,7 +12,7 @@ import Link from "next/link";
 const LINKS = [
   { label: "Accueil", href: "/" },
   { label: "À Propos", href: "/#description" },
-  { label: "Sponsors", href: "/#sponsors" },
+  { label: "Galerie", href: "/gallery" },
   { label: "Bénévoles", href: "/#benevoles" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
