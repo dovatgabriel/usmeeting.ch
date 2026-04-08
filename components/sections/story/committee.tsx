@@ -41,7 +41,7 @@ export const Committee = () => {
               Tout a commencé dans le garage d&apos;un ami, autour d&apos;un
               café et de quelques Harley-Davidson. L&apos;Amicale Live to Ride,
               c&apos;est un groupe de motards passionnés d&apos;Oron-la-Ville
-              qui, en 2021, a décidé de transformer leur passion pour les
+              qui, en 2022, a décidé de transformer leur passion pour les
               véhicules américains en quelque chose de plus grand.
             </p>
             <p className="text-muted-foreground leading-relaxed">

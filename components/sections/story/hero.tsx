@@ -12,7 +12,7 @@ export const StoryHero = () => {
         className="flex flex-col items-center gap-5"
       >
         <span className="text-lg font-medium text-muted-foreground">
-          Depuis 2021
+          Depuis 2022
         </span>
         <h1 className="text-4xl lg:text-7xl font-bold relative inline-block">
           Notre histoire

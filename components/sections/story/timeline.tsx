@@ -3,10 +3,10 @@
 import { motion } from "motion/react";
 
 const EVENTS = [
-  { year: 2021, label: "Première édition · 500 visiteurs" },
-  { year: 2022, label: "2ème édition · 1'500 visiteurs" },
-  { year: 2023, label: "3ème édition · 6'000 visiteurs" },
-  { year: 2024, label: "4ème édition · +10'000 visiteurs" },
+  { year: 2022, label: "Première édition · 500 visiteurs" },
+  { year: 2023, label: "2ème édition · 1'500 visiteurs" },
+  { year: 2024, label: "3ème édition · 6'000 visiteurs" },
+  { year: 2025, label: "4ème édition · +10'000 visiteurs" },
 ];
 
 export const Timeline = () => {
