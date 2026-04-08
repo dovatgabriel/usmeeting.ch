@@ -2,6 +2,8 @@
 
 import { motion } from "motion/react";
 import { Bike } from "lucide-react";
+import Image from "next/image";
+import pic from "@/app/images/amicale.jpg";
 
 const MEMBERS = [
   { name: "Membre 1", role: "Président" },
@@ -50,16 +52,11 @@ export const Committee = () => {
               véhicules américains de Suisse.
             </p>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+          <Image
+            src={pic}
+            alt="Amicale"
             className="w-full lg:w-96 h-72 lg:h-80 rounded-2xl bg-accent flex flex-col items-center justify-center gap-3 text-muted-foreground border shrink-0 overflow-hidden transition-colors duration-300"
-          >
-            <Bike className="size-10 opacity-30" />
-            <span className="text-sm opacity-50">Photo de l&apos;amicale</span>
-          </motion.div>
+          />
         </div>
         <div className="flex flex-col gap-6">
           <h3 className="text-xl font-semibold text-center">Le comité</h3>
