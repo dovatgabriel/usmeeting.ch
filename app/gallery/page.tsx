@@ -5,8 +5,17 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Galerie — US Meeting Oron",
-  description: "Revivez les meilleures éditions du US Meeting Oron en photos.",
+  title: "Galerie photos",
+  description:
+    "Revivez les meilleures éditions du US Meeting Oron en photos. Des centaines de clichés des plus beaux véhicules américains réunis à Oron-La-Ville.",
+  alternates: { canonical: "https://usmeeting.ch/gallery" },
+  openGraph: {
+    title: "Galerie photos — US Meeting Oron",
+    description:
+      "Revivez les meilleures éditions du US Meeting Oron en photos.",
+    url: "https://usmeeting.ch/gallery",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }],
+  },
 };
 
 export default async function GalleryPage() {

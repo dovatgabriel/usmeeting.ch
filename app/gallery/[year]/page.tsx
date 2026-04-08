@@ -15,8 +15,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { year } = await params;
   return {
-    title: `Galerie ${year} — US Meeting Oron`,
-    description: `Photos de l'édition ${year} du US Meeting Oron à Oron-La-Ville.`,
+    title: `Galerie ${year}`,
+    description: `Photos de l'édition ${year} du US Meeting Oron à Oron-La-Ville, Suisse. Revivez les meilleurs moments de ce rassemblement de véhicules américains.`,
+    alternates: { canonical: `https://usmeeting.ch/gallery/${year}` },
+    openGraph: {
+      title: `Galerie ${year} — US Meeting Oron`,
+      description: `Photos de l'édition ${year} du US Meeting Oron à Oron-La-Ville.`,
+      url: `https://usmeeting.ch/gallery/${year}`,
+      images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }],
+    },
   };
 }
 
