@@ -12,7 +12,6 @@ const EVENTS = [
 export const Timeline = () => {
   const currentYear = new Date().getFullYear();
   const lastEventYear = EVENTS[EVENTS.length - 1].year;
-  const hasGap = currentYear > lastEventYear + 1;
   const showCurrentYear = currentYear > lastEventYear;
 
   const items: {
@@ -22,7 +21,7 @@ export const Timeline = () => {
     isGap?: boolean;
   }[] = [
     ...EVENTS,
-    ...(hasGap ? [{ year: 0, label: "...", isGap: true }] : []),
+    { year: 0, label: "...", isGap: true },
     ...(showCurrentYear
       ? [{ year: currentYear, label: "En préparation", isCurrent: true }]
       : []),

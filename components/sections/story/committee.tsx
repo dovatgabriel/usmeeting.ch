@@ -1,9 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
-import { Bike } from "lucide-react";
-import Image from "next/image";
 import pic from "@/app/images/amicale.jpg";
+import { motion } from "motion/react";
+import Image from "next/image";
 
 const MEMBERS = [
   { name: "Membre 1", role: "Président" },
