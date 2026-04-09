@@ -11,9 +11,9 @@ export const Stats = () => {
         En quelques chiffres...
       </h1>
       <div className="flex flex-col gap-10 lg:gap-0 lg:flex-row items-center justify-evenly w-full">
-        <Stat label="Visiteurs passionnés" value={3500} />
-        <Stat label="Véhicules américains" value={250} />
-        <Stat label="D’exposition & animations" value={1500} suffix="m²" />
+        <Stat label="Visiteurs passionnés" value={1000} />
+        <Stat label="Véhicules américains" value={350} />
+        <Stat label="D’exposition & animations" value={3000} suffix="m²" />
       </div>
       <Button
         variant="link"
