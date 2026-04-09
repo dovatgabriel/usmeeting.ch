@@ -1,6 +1,7 @@
 "use client";
 
 import pic from "@/app/images/amicale.jpg";
+import logo from "@/app/images/amicale-logo.png";
 import { motion } from "motion/react";
 import Image from "next/image";
 
@@ -51,11 +52,24 @@ export const Committee = () => {
               véhicules américains de Suisse.
             </p>
           </motion.div>
-          <Image
-            src={pic}
-            alt="Amicale"
-            className="w-full lg:w-96 h-72 lg:h-80 rounded-2xl bg-accent flex flex-col items-center justify-center gap-3 text-muted-foreground border shrink-0 overflow-hidden transition-colors duration-300"
-          />
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
+            className="shrink-0 flex flex-col items-center gap-6 w-full lg:w-96"
+          >
+            <Image
+              src={pic}
+              alt="Amicale Live to Ride"
+              className="w-full h-72 lg:h-80 rounded-2xl object-cover border transition-colors duration-300"
+            />
+            <Image
+              src={logo}
+              alt="Logo Amicale Live to Ride"
+              className="w-48 h-auto dark:invert transition-[filter] duration-300"
+            />
+          </motion.div>
         </div>
         <div className="flex flex-col gap-6">
           <h3 className="text-xl font-semibold text-center">Le comité</h3>
