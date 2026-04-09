@@ -1,140 +1,66 @@
-"use client";
+import Image from "next/image";
 
-import { motion } from "motion/react";
+const BUCKET = "usmeeting-ch.firebasestorage.app";
+const API_KEY = "AIzaSyB_iV7z-2Q5KZCK4hF684OFAoZCeSoa_Jw";
+const BASE = `https://firebasestorage.googleapis.com/v0/b/${BUCKET}/o`;
 
-const EVENTS = [
-  { year: 2022, label: "Première édition · 500 visiteurs" },
-  { year: 2023, label: "2ème édition · 1'500 visiteurs" },
-  { year: 2024, label: "3ème édition · 6'000 visiteurs" },
-  { year: 2025, label: "4ème édition · +10'000 visiteurs" },
-];
+type StorageItem = { name: string; downloadTokens: string };
 
-export const Timeline = () => {
-  const currentYear = new Date().getFullYear();
-  const lastEventYear = EVENTS[EVENTS.length - 1].year;
-  const showCurrentYear = currentYear > lastEventYear;
+async function listLogos(): Promise<StorageItem[]> {
+  const url = `${BASE}?prefix=${encodeURIComponent("story/logos/")}&key=${API_KEY}`;
+  const res = await fetch(url, { next: { revalidate: 3600 } });
+  if (!res.ok) return [];
+  const data = await res.json();
+  return data.items ?? [];
+}
 
-  const items: {
-    year: number;
-    label: string;
-    isCurrent?: boolean;
-    isGap?: boolean;
-  }[] = [
-    ...EVENTS,
-    { year: 0, label: "...", isGap: true },
-    ...(showCurrentYear
-      ? [{ year: currentYear, label: "En préparation", isCurrent: true }]
-      : []),
-  ];
+function getDownloadUrl(name: string, token: string) {
+  return `${BASE}/${encodeURIComponent(name)}?alt=media&token=${token}`;
+}
+
+function extractYear(name: string): string {
+  return `20${name.split(".")[0].split("/").at(-1) || name}`;
+}
+
+export async function Timeline() {
+  const items = await listLogos();
+
+  const logos = items
+    .map((item) => ({
+      year: extractYear(item.name),
+      url: getDownloadUrl(item.name, item.downloadTokens),
+    }))
+    .reverse();
+
+  if (logos.length === 0) return null;
 
   return (
     <section className="py-32 px-8 flex flex-col items-center bg-accent/50 transition-colors duration-300">
-      <div className="w-full max-w-4xl flex flex-col gap-16">
+      <div className="w-full max-w-5xl flex flex-col gap-16">
         <div className="flex flex-col items-center gap-3 text-center">
           <span className="text-lg font-medium text-muted-foreground">
             Année par année
           </span>
-          <h2 className="text-3xl lg:text-5xl font-bold">Chronologie</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold">Les éditions</h2>
         </div>
-
-        <div className="hidden md:flex items-start gap-0">
-          {items.map((item, i) => (
-            <motion.div
-              key={item.isGap ? "gap" : item.year}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: i * 0.08 }}
-              className={`flex flex-col items-center gap-3 ${item.isGap ? "flex-none px-2" : "flex-1"}`}
-            >
-              <div className="w-full flex items-center">
-                <div
-                  className={`h-px flex-1 ${i === 0 ? "opacity-0" : "bg-border"}`}
-                />
-                {item.isGap ? (
-                  <div className="flex gap-1 px-1 pt-1 items-center">
-                    {[0, 1, 2].map((j) => (
-                      <div
-                        key={j}
-                        className="size-1.5 rounded-full bg-border"
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <div
-                    className={`shrink-0 rounded-full ring-4 ring-background transition-colors duration-300 ${
-                      item.isCurrent
-                        ? "size-4 bg-linear-to-br from-purple-500 to-orange-500"
-                        : "size-3 bg-border"
-                    }`}
-                  />
-                )}
-                <div
-                  className={`h-px flex-1 ${i === items.length - 1 ? "opacity-0" : "bg-border"}`}
+        <div className="flex items-center gap-5 flex-wrap justify-evenly">
+          {logos.map(({ year, url }) => (
+            <div key={year} className="flex flex-col items-center gap-3">
+              <div className="relative w-32 h-32 sm:w-36 sm:h-36">
+                <Image
+                  src={url}
+                  alt={`Logo édition ${year}`}
+                  fill
+                  sizes="(max-width: 640px) 128px, 144px"
                 />
               </div>
-              {!item.isGap && (
-                <div className="flex flex-col items-center gap-1 text-center px-2">
-                  <span
-                    className={`font-bold text-lg ${
-                      item.isCurrent
-                        ? "bg-linear-to-r from-purple-500 to-orange-500 bg-clip-text text-transparent"
-                        : ""
-                    }`}
-                  >
-                    {item.year}
-                  </span>
-                  <span className="text-xs text-muted-foreground leading-snug">
-                    {item.label}
-                  </span>
-                </div>
-              )}
-            </motion.div>
-          ))}
-        </div>
-        <div className="flex md:hidden flex-col gap-5 relative">
-          <div className="absolute left-1.5 top-0 bottom-0 w-px bg-border" />
-          {items.map((item, i) => (
-            <motion.div
-              key={item.isGap ? "gap" : item.year}
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: i * 0.07 }}
-              className="flex items-center gap-4 pl-7"
-            >
-              {item.isGap ? (
-                <div className="absolute left-0.5 bg-card p-1 flex flex-col gap-1 -translate-x-px">
-                  {[0, 1, 2].map((j) => (
-                    <div
-                      key={j}
-                      className="size-1 rounded-full bg-border mx-auto"
-                    />
-                  ))}
-                </div>
-              ) : (
-                <>
-                  <div
-                    className={`absolute left-1.5 -translate-x-1/2 rounded-full ring-4 ring-background transition-colors duration-300 ${
-                      item.isCurrent
-                        ? "size-4 bg-linear-to-br from-purple-500 to-orange-500"
-                        : "size-3 bg-border"
-                    }`}
-                  />
-                  <span
-                    className={`font-bold ${item.isCurrent ? "bg-linear-to-r from-purple-500 to-orange-500 bg-clip-text text-transparent" : ""}`}
-                  >
-                    {item.year}
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    {item.label}
-                  </span>
-                </>
-              )}
-            </motion.div>
+              <span className="text-lg font-semibold text-muted-foreground">
+                {year}
+              </span>
+            </div>
           ))}
         </div>
       </div>
     </section>
   );
-};
+}
