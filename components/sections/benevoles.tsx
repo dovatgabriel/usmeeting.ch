@@ -53,7 +53,7 @@ const PERKS = [
   },
   {
     icon: <MailOpen className="size-5 text-white" />,
-    label: "Invitation au repas de soutien",
+    label: "Invitation au repas de remerciements",
   },
 ];
 
