@@ -1,7 +1,8 @@
 "use client";
 
+import { BENEVOLE_FORM_URL } from "@/app/constants";
 import {
-  Car,
+  Hammer,
   HandFist,
   MailOpen,
   ParkingSquare,
@@ -13,32 +14,31 @@ import {
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Button } from "../ui/button";
-import { BENEVOLE_FORM_URL } from "@/app/constants";
 
 const ROLES = [
   {
-    icon: <ParkingSquare className="size-5 text-white" />,
-    title: "Accueil & parking",
+    icon: <Hammer className="size-5 text-white" />,
+    title: "Infrastructure",
     description:
-      "Guider les participants et les visiteurs à leur arrivée, gérer les flux de circulation et l'organisation des parkings.",
+      "Participer au montage et démontage des installations, préparer le site avant l'événement et le remettre en état après.",
   },
   {
-    icon: <Car className="size-5 text-white" />,
-    title: "Gestion des exposants",
+    icon: <ParkingSquare className="size-5 text-white" />,
+    title: "Parking & Accueil des exposants",
     description:
-      "Accueillir les propriétaires de véhicules, les orienter vers leur emplacement et veiller au bon déroulement de l'exposition.",
+      "Guider les participants et visiteurs à leur arrivée, gérer les flux de circulation et orienter les exposants vers leur emplacement.",
   },
   {
     icon: <ShieldCheck className="size-5 text-white" />,
-    title: "Sécurité & périmètre",
+    title: "Sécurité & Gestion du site",
     description:
-      "Veiller à la sécurité des participants, contrôler les accès et maintenir un environnement agréable pour tous.",
+      "Veiller à la sécurité des participants, contrôler les accès et assurer l'entretien du site tout au long de l'événement.",
   },
   {
     icon: <UtensilsCrossed className="size-5 text-white" />,
-    title: "Restauration",
+    title: "Bars & Ravitaillement",
     description:
-      "Participer au service des stands de restauration et buvettes pour que chacun puisse profiter de l'événement.",
+      "Assurer le service aux buvettes et stands, gérer l'approvisionnement en boissons et veiller au confort des participants.",
   },
 ];
 
