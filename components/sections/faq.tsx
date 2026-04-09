@@ -28,7 +28,7 @@ const FAQS = [
   {
     question: "Comment devenir sponsor?",
     answer:
-      "Nous sommes toujours à la recherche de partenaires locaux et nationaux. Consultez notre dossier de sponsoring ou contactez-nous directement à contact@usmeeting.ch pour plus d'informations.",
+      "Nous sommes toujours à la recherche de partenaires locaux et nationaux. Consultez notre dossier de sponsoring ou contactez-nous directement à u.s.meetingoron@gmail.com pour plus d'informations.",
   },
   {
     question: "Où se garer pour l'événement?",

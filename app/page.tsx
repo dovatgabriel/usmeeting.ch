@@ -48,7 +48,7 @@ const jsonLd = {
         "@id": "https://usmeeting.ch/#organization",
         name: "Amicale Live to Ride",
         url: "https://usmeeting.ch",
-        email: "contact@usmeeting.ch",
+        email: "u.s.meetingoron@gmail.com",
         sameAs: [
           "https://www.facebook.com/u.s.meetingoron",
           "https://www.instagram.com/u.s.meetingoron/",
@@ -65,7 +65,7 @@ const jsonLd = {
       name: "Amicale Live to Ride",
       url: "https://usmeeting.ch",
       logo: "https://usmeeting.ch/opengraph-image.png",
-      email: "contact@usmeeting.ch",
+      email: "u.s.meetingoron@gmail.com",
       foundingDate: "2021",
       location: {
         "@type": "Place",

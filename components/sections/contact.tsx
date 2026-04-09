@@ -2,11 +2,14 @@
 
 import { motion } from "motion/react";
 
-const EMAIL = "contact@usmeeting.ch";
+const EMAIL = "u.s.meetingoron@gmail.com";
 
 export const Contact = () => {
   return (
-    <section id="contact" className="py-32 px-8 flex flex-col items-center text-center transition-colors duration-300">
+    <section
+      id="contact"
+      className="py-32 px-8 flex flex-col items-center text-center transition-colors duration-300"
+    >
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
