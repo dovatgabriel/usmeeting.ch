@@ -6,34 +6,39 @@ import { Plus } from "lucide-react";
 
 const FAQS = [
   {
-    question: "Quand a lieu l'US Meeting Oron?",
+    question: "L'entrée est-elle payante ?",
     answer:
-      "L'US Meeting Oron se déroule chaque année le premier week-end du mois de septembre à Oron-La-Ville. Restez connectés sur nos réseaux pour connaître la date exacte de la prochaine édition.",
+      "Non, l'entrée est entièrement libre et gratuite pour tous les visiteurs. Venez profiter de l'événement sans vous soucier du prix du billet !",
   },
   {
-    question: "Comment participer avec mon véhicule américain?",
+    question: "Comment exposer mon véhicule américain ?",
     answer:
-      "Tous les propriétaires de véhicules américains sont les bienvenus. Il suffit de venir le jour de la manifestation avec votre véhicule et nous vous accueillerons !",
+      "Aucune inscription préalable n'est nécessaire. Le parking exposants fonctionne sur le principe du premier arrivé, premier servi — le site ouvre à 9h. Les arrivées et départs sont libres tout au long de la journée. Merci de respecter les instructions du responsable de parc à votre arrivée.",
   },
   {
-    question: "L'événement est-il ouvert au public?",
+    question: "À quelle heure ouvre l'événement ?",
     answer:
-      "Oui, l'US Meeting Oron est ouvert à tous les passionnés d'automobiles américaines et au grand public. L'entrée est libre pour les visiteurs.",
+      "Le site ouvre ses portes à 9h. Nous vous recommandons d'arriver tôt si vous souhaitez exposer votre véhicule, les places étant attribuées par ordre d'arrivée.",
   },
   {
-    question: "Y a-t-il de la restauration sur place?",
+    question: "Où se garer si je viens en tant que visiteur ?",
     answer:
-      "Oui, plusieurs stands de restauration et buvettes sont présents sur le site tout au long de l'événement pour vous accueillir dans la bonne humeur.",
+      "Des parkings publics sont disponibles à proximité du site, notamment au niveau des centres commerciaux alentours. Des indications seront communiquées avant l'événement sur nos réseaux sociaux.",
   },
   {
-    question: "Comment devenir sponsor?",
+    question: "Y a-t-il de la restauration sur place ?",
     answer:
-      "Nous sommes toujours à la recherche de partenaires locaux et nationaux. Consultez notre dossier de sponsoring ou contactez-nous directement à u.s.meetingoron@gmail.com pour plus d'informations.",
+      "Oui, plusieurs stands de restauration et buvettes sont présents sur le site tout au long de la journée pour vous accueillir dans la bonne humeur.",
   },
   {
-    question: "Où se garer pour l'événement?",
+    question: "Où trouver le programme de l'événement ?",
     answer:
-      "Des parkings dédiés sont mis à disposition à proximité du site. Des indications seront communiquées avant l'événement sur nos canaux officiels.",
+      "Le programme complet et le flyer officiel sont publiés sur nos réseaux sociaux avant chaque édition. Consultez nos posts précédents ou abonnez-vous pour ne rien manquer.",
+  },
+  {
+    question: "Comment devenir sponsor ou partenaire ?",
+    answer:
+      "Nous sommes toujours à la recherche de partenaires locaux et régionaux. Contactez-nous directement à u.s.meetingoron@gmail.com pour recevoir notre dossier de sponsoring.",
   },
 ];
 
