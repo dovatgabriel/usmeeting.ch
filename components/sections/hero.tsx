@@ -20,7 +20,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-black/60 dark:bg-black/75 transition-colors duration-300" />
       <div className="relative z-10 flex flex-col gap-10 items-center text-center">
         <Image src={dark} alt="US Meeting Icon" className="size-60" />
-        <div className="flex flex-col gap-5 items-center font-pacifico">
+        <div className="flex flex-col gap-5 items-center font-gill">
           <h1 className="font-extrabold text-3xl md:text-6xl text-white">
             U.S. Meeting Oron
           </h1>

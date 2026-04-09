@@ -1,17 +1,18 @@
-import type { Metadata } from "next";
-import { Pacifico, Raleway } from "next/font/google";
-import "./globals.css";
-import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
+import { Navbar } from "@/components/ui/navbar";
+import type { Metadata } from "next";
+import { Raleway } from "next/font/google";
+import localFont from "next/font/local";
+import "./globals.css";
+
+const gillSans = localFont({
+  src: "../public/fonts/GillSansMT-Bold.ttf",
+  variable: "--font-gill",
+  weight: "700",
+});
 
 const raleway = Raleway({
   variable: "--font-raleway",
-  subsets: ["latin"],
-});
-
-const pacifico = Pacifico({
-  variable: "--font-pacifico",
-  weight: "400",
   subsets: ["latin"],
 });
 
@@ -53,7 +54,9 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: SITE_NAME,
     description: DESCRIPTION,
-    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: SITE_NAME }],
+    images: [
+      { url: "/opengraph-image.png", width: 1200, height: 630, alt: SITE_NAME },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -87,7 +90,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${raleway.variable} ${pacifico.variable} antialiased overflow-x-hidden`}
+        className={`${raleway.variable} ${gillSans.variable} antialiased overflow-x-hidden`}
       >
         <Navbar />
         {children}

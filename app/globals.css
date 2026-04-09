@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-pacifico: var(--font-pacifico);
-  --font-sans: var(--font-raleway);
+  --font-gill: var(--font-gill);
+  --font-sans: var(--font-gill);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-mono: var(--font-geist-mono);
