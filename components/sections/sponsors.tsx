@@ -5,6 +5,7 @@ import { motion, useInView } from "motion/react";
 import Image from "next/image";
 import { useRef } from "react";
 
+import rochat from "@/app/images/sponsors/rochat-citernes.png";
 import bcv from "@/app/images/sponsors/bcv.png";
 import cardinal from "@/app/images/sponsors/cardinal.png";
 import hessj from "@/app/images/sponsors/hessj.png";
@@ -15,6 +16,12 @@ import { Button } from "../ui/button";
 import { SPONSORS_FOLDER_URL } from "@/app/constants";
 
 const companies = [
+  {
+    name: "Rochat Citernes SA",
+    logo: (
+      <Image src={rochat} alt="Logo Rochat Citernes" className="w-50 mx-20" />
+    ),
+  },
   {
     name: "BCV",
     logo: <Image src={bcv} alt="Logo BCV" className="w-50 mx-20" />,
