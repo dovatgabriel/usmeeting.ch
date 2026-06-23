@@ -6,12 +6,16 @@ import { motion } from "motion/react";
 import Image from "next/image";
 
 const MEMBERS = [
-  { name: "Membre 1", role: "Président" },
-  { name: "Membre 2", role: "Vice-président" },
-  { name: "Membre 3", role: "Trésorier" },
-  { name: "Membre 4", role: "Secrétaire" },
-  { name: "Membre 5", role: "Logistique" },
-  { name: "Membre 6", role: "Communication" },
+  { name: "Thierry Sutter", role: "Président" },
+  { name: "Meik Grutzmacher", role: "Vice-président" },
+  { name: "Eric Pilloud", role: "Caissier" },
+  { name: "Marc Schmid", role: "Secrétaire" },
+  { name: "Jeremy Leuba", role: "Membre" },
+  { name: "Bernard Dubois", role: "Membre" },
+  { name: "Julien Hess", role: "Membre" },
+  { name: "Sebastian Favez", role: "Membre" },
+  { name: "Ralph Rouiller", role: "Membre" },
+  { name: "Jean-Pierre Weber", role: "Membre" },
 ];
 
 export const Committee = () => {
