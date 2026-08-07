@@ -5,6 +5,7 @@ import { Faq } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
 import { Sponsors } from "@/components/sections/sponsors";
 import { Stats } from "@/components/sections/stats";
+import { Affiche } from "@/components/sections/story/affiche";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -101,6 +102,7 @@ export default function Home() {
       />
       <div className="flex flex-col items-stretch overflow-x-hidden">
         <Hero />
+        <Affiche />
         <Description />
         <Stats />
         <Sponsors />
